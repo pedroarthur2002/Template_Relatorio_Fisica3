@@ -1,0 +1,188 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{comment}
+% Pacotes para idioma português e acentuação
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+
+% Pacote para fonte Times New Roman
+\usepackage{newtxtext,newtxmath}
+
+% Pacotes para formatação ABNT
+\usepackage{geometry}
+\usepackage{titlesec}
+\geometry{a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\setlength{\parindent}{1.25cm}
+\onehalfspacing
+\usepackage{caption}
+\DeclareCaptionFont{custom10pt}{\fontsize{10pt}{12pt}\selectfont}
+\captionsetup[figure]{font=custom10pt, justification=justified}
+
+% Define o tamanho da fonte para todas as seções como 14pt
+\titleformat*{\section}{\fontsize{14pt}{16pt}\bfseries}
+\titleformat*{\subsection}{\fontsize{14pt}{16pt}\bfseries}
+\titleformat*{\subsubsection}{\fontsize{14pt}{16pt}\bfseries}
+
+% Pacotes para recursos extras
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{lipsum}
+\usepackage[siunitx]{circuitikz} % pacote para fazer circuitos elétricos
+
+% Pacote para referências no padrão ABNT
+\usepackage[alf]{abntex2cite}
+
+% Configurações para cabeçalhos e rodapés
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+
+% O hyperref deve ser o último pacote carregado
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+
+\begin{document}
+
+% Desativa a numeração das páginas para as páginas iniciais
+\pagenumbering{gobble}
+
+% Capa personalizada com titlepage
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.15\textwidth]{Brasão_da_UEFS.png}\\[1.5cm]
+        
+        % Faculdade e curso
+        {\fontsize{18pt}{20pt}\bfseries UNIVERSIDADE ESTADUAL DE FEIRA DE SANTANA}\\[0.3cm]
+        {\fontsize{18pt}{20pt}\bfseries Engenharia de Computação}\\[2cm]
+
+
+        % Alunos
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 1}\\[0.1cm]
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 2}\\[0.1cm]
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 3}\\[0.1cm]
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 4}\\[3cm]
+
+        
+        % Título do experimento
+        {\fontsize{18pt}{20pt}\bfseries Experimento X: Medida da Componente Horizontal do Campo Magnético da Terra}\\[2cm]
+
+        
+        % Cidade e ano no rodapé da página
+        \vfill
+        {\fontsize{12pt}{14pt}\bfseries Feira de Santana - BA}\\
+        {\fontsize{12pt}{14pt}\bfseries \the\year}
+    \end{center}
+\end{titlepage}
+
+% Contra-capa
+\begin{titlepage}
+    \begin{center}
+        % Alunos
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 1}\\[0.1cm]
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 2}\\[0.1cm]
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 3}\\[0.1cm]
+        {\fontsize{14pt}{16pt}\bfseries\itshape Aluno 4}\\[3cm]
+
+        % Título do Experimento
+        {\fontsize{18pt}{20pt}\bfseries Experimento X: Medida da Componente Horizontal do Campo Magnético da Terra}\\[6cm]
+
+       \begin{flushright}
+        \begin{minipage}{0.5\textwidth} % controla a largura e faz o texto "andar para a direita"
+        \onehalfspacing
+        \fontsize{12pt}{15pt}\selectfont
+        \justifying
+        Relatório apresentado como atividade avaliativa parcial da disciplina de Física Experimental III, pertencente ao curso de Engenharia de Computação da Universidade Estadual de Feira de Santana (UEFS).\\[0.1cm]
+        Docente: Prof. Ernando Silva Ferreira.
+    \end{minipage}
+    \end{flushright}
+
+        % Cidade e ano no rodapé da página
+        \vfill
+        {\fontsize{12pt}{14pt}\bfseries Feira de Santana - BA}\\
+        {\fontsize{12pt}{14pt}\bfseries \the\year}
+    \end{center}
+\end{titlepage}
+
+% Sumário
+\tableofcontents
+\newpage
+
+% Começa a numeração a partir do resumo
+\pagenumbering{arabic}
+
+% Resumo
+\section{RESUMO}
+
+\lipsum[1]
+
+\newpage
+% Introdução
+\section{INTRODUÇÃO}
+\label{sec:introducao}
+
+\lipsum[1-3]
+
+\newpage
+% Desenvolvimento
+\section{DESENVOLVIMENTO}
+\label{sec:desenvolvimento}
+
+\lipsum[1]
+
+\subsection{Discussão Teórica}
+\label{subsec:discussao_teorica}
+
+\lipsum[1-3]
+
+\subsection{Procedimentos Experimentais}
+\label{subsec:procedimentos_experimentais}
+
+\lipsum[1-2]
+
+\subsection{Tratamento de Dados e Resultados}
+\label{subsec:discussao_teorica}
+
+\lipsum[1-2]
+
+\newpage
+% Conclusão
+\section{CONCLUSÃO}
+\label{sec:conclusao}
+
+\lipsum[1-2]
+
+
+% Referências
+\newpage
+\addcontentsline{toc}{section}{Referências}  % Adiciona as referências ao TOC
+
+\begin{thebibliography}{99}
+
+\bibitem{halliday2016}
+HALLIDAY, David; RESNICK, Robert; WALKER, Jearl. 
+\textit{Fundamentos de Física, volume 3: Eletromagnetismo}, 10ª edição. 
+Rio de Janeiro: LTC, 2016.
+
+\bibitem{young2015}
+YOUNG, Hugh D.; FREEDMAN, Roger A. 
+\textit{Física III: Eletromagnetismo}, 14ª edição. 
+São Paulo: Pearson, 2015.
+
+\bibitem{vuolo1996}
+VUOLO, José H. 
+\textit{Fundamentos de Teoria dos Erros}, 2ª edição.
+São Paulo: Editora Blucher, 1996.
+
+\end{thebibliography}
+
+
+\end{document}
